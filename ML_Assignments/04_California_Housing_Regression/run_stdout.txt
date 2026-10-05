@@ -1,0 +1,4 @@
+           model      MAE     RMSE       R2
+LinearRegression 0.284138 0.356031 0.880536
+           Ridge 0.284139 0.356030 0.880536
+           Lasso 0.285114 0.356701 0.880086

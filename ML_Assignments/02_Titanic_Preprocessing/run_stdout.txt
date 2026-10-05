@@ -1,0 +1,2 @@
+Cleaned dataset saved as titanic_cleaned.csv
+Numeric: median imputation + standard scaling; categorical: mode imputation + one-hot encoding.

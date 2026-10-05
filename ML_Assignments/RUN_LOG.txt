@@ -1,0 +1,146 @@
+
+=== 01_Titanic_EDA_ML_Lifecycle ===
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "/mnt/data/ML_Assignments_Complete/01_Titanic_EDA_ML_Lifecycle/titanic_eda.py", line 13, in <module>
+    plt.figure(figsize=(6,4)); sns.countplot(data=df,x="Survived"); plt.title("Titanic Survival Distribution"); plt.tight_layout(); plt.savefig(out/"01_survival_distribution.png",dpi=160); plt.close()
+                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/seaborn/categorical.py", line 2661, in countplot
+    color = _default_color(ax.bar, hue, color, kwargs, saturation)
+  File "/opt/pyvenv/lib/python3.13/site-packages/seaborn/utils.py", line 142, in _default_color
+    color = desaturate(color, saturation)
+  File "/opt/pyvenv/lib/python3.13/site-packages/seaborn/utils.py", line 168, in desaturate
+    rgb = to_rgb(color)
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py", line 529, in to_rgb
+    return to_rgba(c)[:3]
+           ~~~~~~~^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py", line 317, in to_rgba
+    rgba = _to_rgba_no_colorcycle(c, alpha)
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py", line 401, in _to_rgba_no_colorcycle
+    raise ValueError(f"Invalid RGBA argument: {orig_c!r}")
+ValueError: Invalid RGBA argument: None
+
+
+=== 02_Titanic_Preprocessing ===
+STDOUT:
+Cleaned dataset saved as titanic_cleaned.csv
+Numeric: median imputation + standard scaling; categorical: mode imputation + one-hot encoding.
+
+STDERR:
+
+
+=== 03_Adult_Income_Feature_Engineering ===
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "/mnt/data/ML_Assignments_Complete/03_Adult_Income_Feature_Engineering/adult_income_eda.py", line 15, in <module>
+    plt.figure(figsize=(7,4)); sns.countplot(data=df,x="income"); plt.title("Income Class Distribution"); plt.tight_layout(); plt.savefig(out+"/01_income_distribution.png",dpi=160); plt.close()
+                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/seaborn/categorical.py", line 2661, in countplot
+    color = _default_color(ax.bar, hue, color, kwargs, saturation)
+  File "/opt/pyvenv/lib/python3.13/site-packages/seaborn/utils.py", line 142, in _default_color
+    color = desaturate(color, saturation)
+  File "/opt/pyvenv/lib/python3.13/site-packages/seaborn/utils.py", line 168, in desaturate
+    rgb = to_rgb(color)
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py", line 529, in to_rgb
+    return to_rgba(c)[:3]
+           ~~~~~~~^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py", line 317, in to_rgba
+    rgba = _to_rgba_no_colorcycle(c, alpha)
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/colors.py", line 401, in _to_rgba_no_colorcycle
+    raise ValueError(f"Invalid RGBA argument: {orig_c!r}")
+ValueError: Invalid RGBA argument: None
+
+
+=== 04_California_Housing_Regression ===
+STDOUT:
+           model      MAE     RMSE       R2
+LinearRegression 0.284138 0.356031 0.880536
+           Ridge 0.284139 0.356030 0.880536
+           Lasso 0.285114 0.356701 0.880086
+
+STDERR:
+
+
+=== 05_Titanic_Logistic_Regression ===
+STDOUT:
+ accuracy  precision   recall       f1  roc_auc
+ 0.664804   0.711268 0.841667 0.770992 0.682062
+              precision    recall  f1-score   support
+
+           0       0.49      0.31      0.38        59
+           1       0.71      0.84      0.77       120
+
+    accuracy                           0.66       179
+   macro avg       0.60      0.57      0.57       179
+weighted avg       0.64      0.66      0.64       179
+
+
+STDERR:
+
+
+=== 06_Diabetes_Multinomial_Logistic ===
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "/mnt/data/ML_Assignments_Complete/06_Diabetes_Multinomial_Logistic/diabetes_multinomial.py", line 13, in <module>
+    ("clf",LogisticRegression(multi_class="multinomial",max_iter=2000))])
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: LogisticRegression.__init__() got an unexpected keyword argument 'multi_class'
+
+
+=== 07_Auto_MPG_Regression ===
+STDOUT:
+        MAE      RMSE        R2
+0  2.844255  3.641413  0.760199
+
+STDERR:
+
+
+=== 08_Heart_Disease_Decision_Tree ===
+STDOUT:
+              precision    recall  f1-score   support
+
+           0       0.59      0.75      0.66       102
+           1       0.66      0.48      0.55       103
+
+    accuracy                           0.61       205
+   macro avg       0.62      0.62      0.61       205
+weighted avg       0.63      0.61      0.61       205
+
+
+STDERR:
+
+
+=== 09_Heart_Disease_Random_Forest ===
+STDOUT:
+          model  accuracy  precision    recall        f1
+0  DecisionTree  0.619512   0.648649  0.648649  0.648649
+1  RandomForest  0.673171   0.692982  0.711712  0.702222
+
+STDERR:
+
+
+=== 10_Heart_Disease_XGBoost_LightGBM_SHAP ===
+STDOUT:
+      model  accuracy  precision    recall        f1
+0   XGBoost  0.634146   0.660714  0.666667  0.663677
+1  LightGBM  0.614634   0.648148  0.630631  0.639269
+
+STDERR:
+
+
+=== 11_Wine_Quality_Tree_RF ===
+STDOUT:
+          model  accuracy  precision_weighted  recall_weighted  f1_weighted
+0  DecisionTree  0.853125            0.827543         0.853125     0.835342
+1  RandomForest  0.881250            0.861551         0.881250     0.855443
+
+STDERR:
+/opt/pyvenv/lib/python3.13/site-packages/sklearn/metrics/_classification.py:1833: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
+

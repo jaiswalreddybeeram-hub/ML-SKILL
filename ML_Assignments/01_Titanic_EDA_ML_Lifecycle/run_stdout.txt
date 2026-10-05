@@ -1,0 +1,1 @@
+ML lifecycle: Problem -> Data collection -> Cleaning -> EDA -> Feature preparation -> Modeling -> Evaluation -> Deployment/monitoring
